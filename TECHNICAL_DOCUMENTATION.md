@@ -154,7 +154,7 @@ React operates on declarative, immutable state transitions. D3’s force-directe
 In early iterations, whenever the user toggled the sidebar or resized the viewport, React triggered a re-render. If the graph container dimensions changed, the simulation was torn down and re-initialized, causing **the entire network layout to collapse and restart from scratch**, destroying user spatial memory.
 
 **The Solution:**
-We decoupled the **physics simulation lifecycle** from **layout and resizing events** using a persistent position cache and stable zoom transform storage:
+I decoupled the **physics simulation lifecycle** from **layout and resizing events** using a persistent position cache and stable zoom transform storage:
 
 1. **Persistent Coordinate Caching (`nodePositionCache`):**
    A module-scoped memory cache stores the computed coordinates (`x, y, fx, fy`) of every vertex on each simulation tick:
@@ -182,10 +182,10 @@ In a stakeholder network around a central enterprise, the client node (**Shell p
 - Asymmetric directed edges become impossible to distinguish from undirected mutual edges.
 
 **The Solution:**
-We engineered a multi-force equilibrium model tuned specifically for high-degree organizational graphs:
+I engineered a multi-force equilibrium model tuned specifically for high-degree organizational graphs:
 
 1. **Strength-Inverted Link Distances:**
-   Standard D3 links use uniform resting lengths. We customized link distance to be inversely proportional to relationship strength:
+   Standard D3 links use uniform resting lengths. I customized link distance to be inversely proportional to relationship strength:
    ```ts
    .distance((d) => 250 - (d.strength * 15))
    ```
