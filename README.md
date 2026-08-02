@@ -1,8 +1,10 @@
 # ApexSignal — Stakeholder Relationship Visualiser
 
 ApexSignal is an interactive **stakeholder relationship visualiser** designed for a major energy company (Shell) to quickly understand its surrounding ecosystem and the current health of those relationships.
+- live link: https://stakeholder-relationship-visulaiser.vercel.app/
 
 ## Table of Contents
+- [Technical Documentation & Architecture](TECHNICAL_DOCUMENTATION.md)
 - [Technical Approach](#technical-approach)
 - [Architectural Decisions](#architectural-decisions)
 - [Data Model](#data-model)
