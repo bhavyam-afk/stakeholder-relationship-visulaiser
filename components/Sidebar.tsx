@@ -114,6 +114,15 @@ export default function Sidebar({
             const trend = computeTrend(edge.relationshipHistory);
             const trendInfo = TREND_DISPLAY[trend];
 
+            // For directed relationships, determine the readable direction
+            const isOutgoing = edge.direction === "directed" && selectedNode.id === edge.source;
+            const isIncoming = edge.direction === "directed" && selectedNode.id === edge.target;
+            const isDirected = edge.direction === "directed";
+
+            // Build source/target display names for direction row
+            const sourceName = isOutgoing ? selectedNode.name : otherNode.name;
+            const targetName = isOutgoing ? otherNode.name : selectedNode.name;
+
             return (
               <div
                 key={i}
@@ -128,7 +137,9 @@ export default function Sidebar({
                     }}
                   />
                   <span className="relationship-node-name">
+                    {isIncoming && "← "}
                     {otherNode.name}
+                    {isOutgoing && " →"}
                   </span>
                   <span
                     className="relationship-status-badge"
@@ -177,26 +188,39 @@ export default function Sidebar({
                   </div>
                 </div>
 
+                {/* Direction indicator for directed relationships */}
+                {isDirected && (
+                  <div className="relationship-direction">
+                    <span className="direction-label">Direction</span>
+                    <span className="direction-arrow">
+                      {sourceName} → {targetName}
+                    </span>
+                  </div>
+                )}
+
                 {edge.note && (
                   <p className="relationship-note">{edge.note}</p>
                 )}
 
-                {/* Mini timeline */}
-                <div className="relationship-timeline">
-                  {edge.relationshipHistory.map((snapshot, j) => (
-                    <div key={j} className="timeline-dot-wrapper">
-                      <div
-                        className="timeline-dot"
-                        style={{
-                          backgroundColor: STATUS_COLOURS[snapshot.status],
-                        }}
-                        title={`${snapshot.timestamp}: ${snapshot.status}`}
-                      />
-                      {j < edge.relationshipHistory.length - 1 && (
-                        <div className="timeline-connector" />
-                      )}
-                    </div>
-                  ))}
+                {/* Mini timeline — Status over time */}
+                <div className="relationship-timeline-container">
+                  <div className="relationship-timeline-label">Status over time</div>
+                  <div className="relationship-timeline">
+                    {edge.relationshipHistory.map((snapshot, j) => (
+                      <div key={j} className="timeline-dot-wrapper">
+                        <div
+                          className="timeline-dot"
+                          style={{
+                            backgroundColor: STATUS_COLOURS[snapshot.status],
+                          }}
+                          title={`${snapshot.timestamp}: ${snapshot.status}`}
+                        />
+                        {j < edge.relationshipHistory.length - 1 && (
+                          <div className="timeline-connector" />
+                        )}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             );

@@ -22,6 +22,11 @@ interface ForceGraphProps {
   activeFilters: Set<StakeholderType>;
 }
 
+// Persistent position cache — survives component re-renders
+const nodePositionCache: Record<string, { x: number; y: number; fx: number | null; fy: number | null }> = {};
+// Persistent zoom transform — survives re-renders
+let savedZoomTransform: d3.ZoomTransform | null = null;
+
 export default function ForceGraph({
   nodes,
   edges,
@@ -32,9 +37,11 @@ export default function ForceGraph({
   const svgRef = useRef<SVGSVGElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const simulationRef = useRef<d3.Simulation<SimulationNode, undefined> | null>(null);
+  const zoomRef = useRef<d3.ZoomBehavior<SVGSVGElement, unknown> | null>(null);
+  const gRef = useRef<d3.Selection<SVGGElement, unknown, null, undefined> | null>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
-  // Handle resize
+  // Handle resize — only update SVG dimensions, don't rebuild the graph
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -75,7 +82,10 @@ export default function ForceGraph({
     ? getConnectedIds(selectedNodeId)
     : null;
 
-  // Main D3 rendering
+  // Stable key for the current filter set — only rebuild simulation when filters change
+  const filterKey = [...activeFilters].sort().join(",");
+
+  // Main D3 rendering — does NOT depend on `dimensions`
   useEffect(() => {
     if (!svgRef.current || dimensions.width === 0 || dimensions.height === 0)
       return;
@@ -85,10 +95,17 @@ export default function ForceGraph({
 
     const { width, height } = dimensions;
 
-    // Create simulation nodes (deep copy)
-    const simNodes: SimulationNode[] = filteredNodes.map((n) => ({
-      ...n,
-    }));
+    // Create simulation nodes, restoring cached positions
+    const simNodes: SimulationNode[] = filteredNodes.map((n) => {
+      const cached = nodePositionCache[n.id];
+      if (cached) {
+        return { ...n, x: cached.x, y: cached.y, fx: cached.fx, fy: cached.fy };
+      }
+      return { ...n };
+    });
+
+    const hasRestoredPositions = simNodes.some((n) => n.x !== undefined);
+
     const simEdges = filteredEdges.map((e) => ({
       source: e.source,
       target: e.target,
@@ -150,19 +167,26 @@ export default function ForceGraph({
 
     // Zoom container
     const g = svg.append("g");
+    gRef.current = g;
 
     const zoom = d3
       .zoom<SVGSVGElement, unknown>()
       .scaleExtent([0.2, 4])
       .on("zoom", (event) => {
         g.attr("transform", event.transform);
+        savedZoomTransform = event.transform;
       });
 
+    zoomRef.current = zoom;
     svg.call(zoom);
 
-    // Center the view initially
-    const initialTransform = d3.zoomIdentity.translate(width / 2, height / 2);
-    svg.call(zoom.transform, initialTransform);
+    // Restore saved zoom transform, or center the view
+    if (savedZoomTransform) {
+      svg.call(zoom.transform, savedZoomTransform);
+    } else {
+      const initialTransform = d3.zoomIdentity.translate(width / 2, height / 2);
+      svg.call(zoom.transform, initialTransform);
+    }
 
     // Force simulation
     const simulation = d3
@@ -185,6 +209,11 @@ export default function ForceGraph({
       )
       .force("x", d3.forceX(0).strength(0.03))
       .force("y", d3.forceY(0).strength(0.03));
+
+    // If we restored positions, start with very low alpha so the graph barely moves
+    if (hasRestoredPositions) {
+      simulation.alpha(0.05).alphaDecay(0.05);
+    }
 
     simulationRef.current = simulation;
 
@@ -335,7 +364,7 @@ export default function ForceGraph({
       });
     }
 
-    // Simulation tick
+    // Simulation tick — also saves positions to cache
     simulation.on("tick", () => {
       linkGroup
         .attr("x1", (d) => (d.source as unknown as SimulationNode).x!)
@@ -344,12 +373,25 @@ export default function ForceGraph({
         .attr("y2", (d) => (d.target as unknown as SimulationNode).y!);
 
       nodeGroup.attr("transform", (d) => `translate(${d.x},${d.y})`);
+
+      // Persist positions to cache
+      simNodes.forEach((n) => {
+        if (n.x !== undefined && n.y !== undefined) {
+          nodePositionCache[n.id] = { x: n.x, y: n.y, fx: n.fx ?? null, fy: n.fy ?? null };
+        }
+      });
     });
 
     return () => {
+      // Save final positions before teardown
+      simNodes.forEach((n) => {
+        if (n.x !== undefined && n.y !== undefined) {
+          nodePositionCache[n.id] = { x: n.x, y: n.y, fx: n.fx ?? null, fy: n.fy ?? null };
+        }
+      });
       simulation.stop();
     };
-  }, [filteredNodes, filteredEdges, selectedNodeId, connectedIds, dimensions, onNodeSelect]);
+  }, [filterKey, selectedNodeId, connectedIds, dimensions, onNodeSelect]);
 
   return (
     <div ref={containerRef} className="w-full h-full relative">

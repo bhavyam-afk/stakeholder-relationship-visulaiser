@@ -3,8 +3,7 @@
 import { useState, useMemo, useCallback } from "react";
 import ForceGraph from "@/components/ForceGraph";
 import Sidebar from "@/components/Sidebar";
-import FilterPanel from "@/components/FilterPanel";
-import Legend from "@/components/Legend";
+import GuidePanel from "@/components/GuidePanel";
 import stakeholderData from "@/data/stakeholders.json";
 import {
   StakeholderNode,
@@ -34,6 +33,8 @@ export default function Home() {
   const [activeFilters, setActiveFilters] = useState<Set<StakeholderType>>(
     () => new Set(ALL_TYPES)
   );
+
+  const [isLeftPanelOpen, setIsLeftPanelOpen] = useState(false);
 
   const stakeholderCounts = useMemo(() => {
     const counts: Record<string, number> = {};
@@ -67,6 +68,15 @@ export default function Home() {
       {/* Header */}
       <header className="app-header">
         <div className="header-left">
+          <button 
+            className="hamburger-btn" 
+            onClick={() => setIsLeftPanelOpen(!isLeftPanelOpen)}
+            aria-label="Toggle Filters"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M4 12h16M4 6h16M4 18h16" />
+            </svg>
+          </button>
           <div className="header-logo">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
               <circle cx="14" cy="14" r="12" stroke="url(#headerGrad)" strokeWidth="2" />
@@ -104,14 +114,15 @@ export default function Home() {
       {/* Main Content */}
       <div className="app-content">
         {/* Left Panel: Filters */}
-        <aside className="app-left-panel">
-          <FilterPanel
-            activeFilters={activeFilters}
-            onToggleFilter={handleToggleFilter}
-            stakeholderCounts={stakeholderCounts}
-          />
-          <Legend />
-        </aside>
+        {isLeftPanelOpen && (
+          <aside className="app-left-panel">
+            <GuidePanel
+              activeFilters={activeFilters}
+              onToggleFilter={handleToggleFilter}
+              stakeholderCounts={stakeholderCounts}
+            />
+          </aside>
+        )}
 
         {/* Center: Graph */}
         <div className="app-graph-area">
@@ -125,14 +136,16 @@ export default function Home() {
         </div>
 
         {/* Right Panel: Sidebar */}
-        <aside className="app-right-panel">
-          <Sidebar
-            selectedNode={selectedNode}
-            edges={data.edges}
-            nodes={data.nodes}
-            onNodeSelect={handleNodeSelect}
-          />
-        </aside>
+        {selectedNode && (
+          <aside className="app-right-panel">
+            <Sidebar
+              selectedNode={selectedNode}
+              edges={data.edges}
+              nodes={data.nodes}
+              onNodeSelect={handleNodeSelect}
+            />
+          </aside>
+        )}
       </div>
     </main>
   );

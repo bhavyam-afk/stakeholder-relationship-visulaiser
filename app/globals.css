@@ -99,6 +99,24 @@ body {
   gap: 12px;
 }
 
+.hamburger-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-primary);
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hamburger-btn:hover {
+  background: var(--bg-hover);
+}
+
 .header-logo {
   display: flex;
   align-items: center;
@@ -161,15 +179,15 @@ body {
 }
 
 /* ============================================
-   LEFT PANEL (Filters + Legend)
+   LEFT PANEL (Guide / Manual)
    ============================================ */
 .app-left-panel {
-  width: 220px;
+  width: 260px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   gap: 0;
-  padding: 16px 12px;
+  padding: 0;
   background: var(--glass-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -179,33 +197,56 @@ body {
 }
 
 /* ============================================
-   FILTER PANEL
+   GUIDE PANEL
    ============================================ */
-.filter-panel {
-  flex: 1;
+.guide-panel {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 0;
 }
 
-.filter-title {
-  font-size: 11px;
-  font-weight: 600;
+.guide-section {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-secondary);
+}
+
+.guide-section:last-child {
+  border-bottom: none;
+}
+
+.guide-section-title {
+  font-size: 10px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: var(--text-tertiary);
-  margin-bottom: 10px;
-  padding: 0 4px;
+  margin-bottom: 6px;
 }
 
+.guide-hint {
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.guide-hint strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ── Filter list (reused from old filter panel) ── */
 .filter-list {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
 }
 
 .filter-item {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 7px 8px;
+  padding: 5px 6px;
   border-radius: var(--radius-sm);
   border: none;
   background: transparent;
@@ -233,69 +274,207 @@ body {
 }
 
 .filter-dot {
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   flex-shrink: 0;
   transition: background-color 0.2s ease;
 }
 
 .filter-label {
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--text-primary);
   flex: 1;
 }
 
 .filter-count {
-  font-size: 11px;
+  font-size: 10px;
   color: var(--text-tertiary);
   font-weight: 500;
   font-variant-numeric: tabular-nums;
 }
 
-/* ============================================
-   LEGEND PANEL
-   ============================================ */
-.legend-panel {
-  padding-top: 16px;
-  margin-top: 16px;
-  border-top: 1px solid var(--border-primary);
-}
-
-.legend-title {
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-tertiary);
-  margin-bottom: 10px;
-  padding: 0 4px;
-}
-
-.legend-items {
+/* ── Legend grid (colour dots, lines) ── */
+.guide-legend-grid {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 0 4px;
+  gap: 5px;
 }
 
-.legend-item {
+.guide-legend-item {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.legend-line {
-  width: 18px;
-  height: 3px;
-  border-radius: 2px;
+.guide-colour-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
-.legend-label {
-  font-size: 12px;
+.guide-colour-line {
+  width: 20px;
+  height: 3px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.guide-legend-label {
+  font-size: 11.5px;
   color: var(--text-secondary);
   font-weight: 400;
+}
+
+/* ── Node size demo ── */
+.guide-size-demo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.guide-size-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.guide-size-circle {
+  border-radius: 50%;
+  background: var(--accent-blue);
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.guide-size-sm {
+  width: 10px;
+  height: 10px;
+}
+
+.guide-size-md {
+  width: 18px;
+  height: 18px;
+}
+
+.guide-size-lg {
+  width: 26px;
+  height: 26px;
+}
+
+/* ── Edge thickness demo ── */
+.guide-thickness-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.guide-thickness-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.guide-thickness-line {
+  width: 36px;
+  border-radius: 2px;
+  background: var(--accent-blue);
+  opacity: 0.6;
+}
+
+.guide-thickness-thin {
+  height: 1.5px;
+}
+
+.guide-thickness-thick {
+  height: 5px;
+}
+
+/* ── Trend symbol ── */
+.guide-trend-symbol {
+  font-size: 14px;
+  font-weight: 700;
+  width: 18px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* ── Timeline demo ── */
+.guide-timeline-demo {
+  display: flex;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.guide-demo-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.guide-demo-connector {
+  width: 14px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Interactions ── */
+.guide-interactions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.guide-interaction-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.guide-key {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent-blue);
+  background: rgba(74, 158, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.guide-interaction-desc {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+}
+
+/* ── Glossary ── */
+.guide-glossary {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.guide-glossary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.guide-glossary-item dt {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.guide-glossary-item dd {
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--text-tertiary);
+  margin: 0;
 }
 
 /* ============================================
@@ -350,6 +529,7 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .sidebar-empty {
@@ -386,6 +566,9 @@ body {
 
 .sidebar-active {
   animation: slideIn 0.25s ease-out;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 @keyframes slideIn {
@@ -620,11 +803,25 @@ body {
 /* ============================================
    MINI TIMELINE
    ============================================ */
+.relationship-timeline-container {
+  padding-top: 8px;
+  border-top: 1px solid var(--border-secondary);
+  margin-top: 6px;
+}
+
+.relationship-timeline-label {
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-tertiary);
+  margin-bottom: 6px;
+}
+
 .relationship-timeline {
   display: flex;
   align-items: center;
   gap: 0;
-  padding-top: 8px;
 }
 
 .timeline-dot-wrapper {
@@ -638,16 +835,46 @@ body {
   border-radius: 50%;
   flex-shrink: 0;
   transition: transform 0.2s ease;
+  cursor: help;
 }
 
 .timeline-dot:hover {
-  transform: scale(1.4);
+  transform: scale(1.5);
+  box-shadow: 0 0 6px currentColor;
 }
 
 .timeline-connector {
   width: 16px;
   height: 2px;
   background: rgba(255, 255, 255, 0.08);
+}
+
+/* ============================================
+   DIRECTION INDICATOR
+   ============================================ */
+.relationship-direction {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 6px 0 2px;
+}
+
+.direction-arrow {
+  font-size: 12px;
+  color: var(--accent-blue);
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.direction-label {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 /* ============================================
@@ -661,7 +888,7 @@ body {
 
 @media (max-width: 1024px) {
   .app-left-panel {
-    width: 180px;
+    width: 230px;
   }
 
   .app-right-panel {
@@ -676,40 +903,9 @@ body {
 
   .app-left-panel {
     width: 100%;
-    flex-direction: row;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 8px 12px;
+    max-height: 50vh;
     border-right: none;
     border-bottom: 1px solid var(--glass-border);
-  }
-
-  .filter-panel {
-    flex: none;
-  }
-
-  .filter-list {
-    flex-direction: row;
-    gap: 4px;
-  }
-
-  .filter-item {
-    white-space: nowrap;
-    padding: 5px 10px;
-  }
-
-  .legend-panel {
-    border-top: none;
-    border-left: 1px solid var(--border-primary);
-    margin-top: 0;
-    padding-top: 0;
-    padding-left: 12px;
-    margin-left: 12px;
-  }
-
-  .legend-items {
-    flex-direction: row;
-    gap: 10px;
   }
 
   .app-graph-area {
