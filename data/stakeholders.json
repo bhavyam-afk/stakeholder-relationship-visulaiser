@@ -1,0 +1,891 @@
+{
+  "nodes": [
+    {
+      "id": "shell",
+      "name": "Shell plc",
+      "type": "company",
+      "description": "Shell plc is a British multinational oil and gas company headquartered in London. It is one of the world's largest companies by revenue and among the oil and gas supermajors.",
+      "influence": 5
+    },
+    {
+      "id": "uk-gov",
+      "name": "UK Government",
+      "type": "government",
+      "description": "The Government of the United Kingdom regulates Shell's domestic operations, taxation, and environmental compliance. Shell is headquartered in London.",
+      "influence": 5
+    },
+    {
+      "id": "nl-gov",
+      "name": "Netherlands Government",
+      "type": "government",
+      "description": "The Netherlands has historically been central to Shell's operations. The Dutch government maintains significant regulatory oversight and policy influence.",
+      "influence": 4
+    },
+    {
+      "id": "nigeria-gov",
+      "name": "Nigerian Government",
+      "type": "government",
+      "description": "Nigeria is one of Shell's most significant upstream markets. The government co-owns operations through NNPC and regulates the Niger Delta region.",
+      "influence": 4
+    },
+    {
+      "id": "us-gov",
+      "name": "US Government",
+      "type": "government",
+      "description": "The United States is a critical market for Shell's downstream operations, LNG exports, and petrochemical activities. Federal energy policy directly impacts Shell's strategy.",
+      "influence": 5
+    },
+    {
+      "id": "eu-commission",
+      "name": "European Commission",
+      "type": "regulator",
+      "description": "The European Commission sets climate targets, emissions trading rules, and environmental regulations that significantly affect Shell's European operations and transition strategy.",
+      "influence": 5
+    },
+    {
+      "id": "ofgem",
+      "name": "Ofgem",
+      "type": "regulator",
+      "description": "The UK energy regulator oversees gas and electricity markets where Shell operates as a major supplier. Ofgem's pricing frameworks directly impact Shell's retail margins.",
+      "influence": 3
+    },
+    {
+      "id": "epa",
+      "name": "US EPA",
+      "type": "regulator",
+      "description": "The US Environmental Protection Agency regulates Shell's American operations, including emissions standards, waste disposal, and environmental compliance.",
+      "influence": 4
+    },
+    {
+      "id": "sec",
+      "name": "US SEC",
+      "type": "regulator",
+      "description": "The Securities and Exchange Commission oversees Shell's US stock listing, financial disclosures, and increasingly, climate-related financial reporting.",
+      "influence": 3
+    },
+    {
+      "id": "bp",
+      "name": "BP",
+      "type": "competitor",
+      "description": "BP is a direct competitor in global oil and gas markets. Both companies compete for upstream assets, downstream market share, and positioning in the energy transition.",
+      "influence": 4
+    },
+    {
+      "id": "totalenergies",
+      "name": "TotalEnergies",
+      "type": "competitor",
+      "description": "TotalEnergies competes with Shell across LNG, renewables, and European retail markets. Both are pursuing parallel energy transition strategies.",
+      "influence": 4
+    },
+    {
+      "id": "exxonmobil",
+      "name": "ExxonMobil",
+      "type": "competitor",
+      "description": "ExxonMobil is Shell's largest competitor globally. They compete on upstream production, refining capacity, and increasingly on carbon capture and hydrogen strategies.",
+      "influence": 5
+    },
+    {
+      "id": "saudi-aramco",
+      "name": "Saudi Aramco",
+      "type": "competitor",
+      "description": "Saudi Aramco is the world's largest oil company. While not a direct market competitor in all segments, its production decisions significantly influence global oil prices affecting Shell.",
+      "influence": 5
+    },
+    {
+      "id": "nnpc",
+      "name": "NNPC",
+      "type": "supplier",
+      "description": "The Nigerian National Petroleum Corporation is Shell's joint venture partner in Nigeria. NNPC controls upstream access and co-manages significant production assets.",
+      "influence": 4
+    },
+    {
+      "id": "qatarenergy",
+      "name": "QatarEnergy",
+      "type": "supplier",
+      "description": "QatarEnergy partners with Shell on major LNG projects including the North Field Expansion. Qatar is central to Shell's LNG-first strategy.",
+      "influence": 4
+    },
+    {
+      "id": "schlumberger",
+      "name": "SLB (Schlumberger)",
+      "type": "supplier",
+      "description": "SLB provides critical oilfield services, drilling technology, and digital solutions that Shell depends on for upstream operations globally.",
+      "influence": 3
+    },
+    {
+      "id": "blackrock",
+      "name": "BlackRock",
+      "type": "financier",
+      "description": "BlackRock is one of Shell's largest institutional investors. As the world's biggest asset manager, BlackRock's ESG positioning and voting decisions influence Shell's climate strategy.",
+      "influence": 5
+    },
+    {
+      "id": "vanguard",
+      "name": "Vanguard",
+      "type": "financier",
+      "description": "Vanguard is a major Shell shareholder. Its index fund holdings make it a permanent, significant investor whose governance positions carry weight.",
+      "influence": 4
+    },
+    {
+      "id": "hsbc",
+      "name": "HSBC",
+      "type": "financier",
+      "description": "HSBC provides financing and banking services to Shell. The bank has made climate commitments that increasingly influence its energy sector lending practices.",
+      "influence": 3
+    },
+    {
+      "id": "norges-bank",
+      "name": "Norges Bank Investment",
+      "type": "financier",
+      "description": "Norway's sovereign wealth fund is a significant Shell shareholder. Known for active ESG engagement, it has publicly challenged Shell on climate targets.",
+      "influence": 4
+    },
+    {
+      "id": "greenpeace",
+      "name": "Greenpeace",
+      "type": "ngo",
+      "description": "Greenpeace has historically been one of Shell's most vocal critics, from the Brent Spar campaign to current fossil fuel expansion opposition.",
+      "influence": 3
+    },
+    {
+      "id": "friends-earth",
+      "name": "Friends of the Earth",
+      "type": "ngo",
+      "description": "Friends of the Earth Netherlands successfully sued Shell in 2021, winning a court order requiring Shell to cut emissions 45% by 2030. A landmark case in climate litigation.",
+      "influence": 4
+    },
+    {
+      "id": "clientearth",
+      "name": "ClientEarth",
+      "type": "ngo",
+      "description": "ClientEarth uses legal action to hold companies accountable on climate. They have targeted Shell's board directly over climate strategy inadequacies.",
+      "influence": 3
+    },
+    {
+      "id": "unilever",
+      "name": "Unilever",
+      "type": "customer",
+      "description": "Unilever is a major buyer of Shell's petrochemical products and energy. As a company with ambitious sustainability targets, Unilever pressures Shell on supply chain emissions.",
+      "influence": 3
+    },
+    {
+      "id": "lufthansa",
+      "name": "Lufthansa Group",
+      "type": "customer",
+      "description": "Lufthansa is a significant aviation fuel customer. Shell supplies jet fuel and is developing sustainable aviation fuel (SAF) in partnership with major airlines.",
+      "influence": 3
+    },
+    {
+      "id": "basf",
+      "name": "BASF",
+      "type": "customer",
+      "description": "BASF is a major customer for Shell's petrochemical feedstocks. The companies collaborate on chemical innovation and share supply chain infrastructure in Europe.",
+      "influence": 3
+    },
+    {
+      "id": "unite-union",
+      "name": "Unite the Union",
+      "type": "union",
+      "description": "Unite represents workers at Shell's UK refineries and downstream operations. Labour relations have been tested by refinery closures and energy transition job impacts.",
+      "influence": 2
+    },
+    {
+      "id": "industriall",
+      "name": "IndustriALL Global Union",
+      "type": "union",
+      "description": "IndustriALL represents energy sector workers globally. It advocates for just transition policies and worker protections during Shell's operational restructuring.",
+      "influence": 2
+    },
+    {
+      "id": "wim-elfrink",
+      "name": "Wael Sawan",
+      "type": "individual",
+      "description": "Wael Sawan is the CEO of Shell since January 2023. He has shifted Shell's strategy toward 'performance, discipline, and simplification', scaling back some renewable commitments.",
+      "influence": 5
+    },
+    {
+      "id": "mark-carney",
+      "name": "Mark Carney",
+      "type": "individual",
+      "description": "Former Bank of England Governor and UN Special Envoy for Climate. Carney's climate finance advocacy and policy influence directly impact the regulatory landscape Shell operates in.",
+      "influence": 4
+    },
+    {
+      "id": "iea",
+      "name": "International Energy Agency",
+      "type": "regulator",
+      "description": "The IEA's energy outlooks and policy recommendations shape global energy policy. Its Net Zero roadmap has been used to benchmark Shell's climate commitments.",
+      "influence": 4
+    },
+    {
+      "id": "opec",
+      "name": "OPEC",
+      "type": "regulator",
+      "description": "OPEC's production decisions directly impact global oil prices and Shell's upstream profitability. While Shell is not a member, OPEC's actions are a primary market driver.",
+      "influence": 5
+    },
+    {
+      "id": "siemens-energy",
+      "name": "Siemens Energy",
+      "type": "supplier",
+      "description": "Siemens Energy supplies turbines and electrical equipment for Shell's LNG plants and renewable energy installations, supporting Shell's operational infrastructure.",
+      "influence": 2
+    },
+    {
+      "id": "climate-action-100",
+      "name": "Climate Action 100+",
+      "type": "ngo",
+      "description": "Climate Action 100+ is an investor-led initiative engaging the world's largest corporate emitters. Shell is a focus company, subject to coordinated investor pressure on climate targets.",
+      "influence": 4
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "type": "customer",
+      "description": "Amazon is a growing customer for Shell's renewable energy certificates and low-carbon fuels as part of Amazon's Climate Pledge to reach net-zero by 2040.",
+      "influence": 3
+    }
+  ],
+  "edges": [
+    {
+      "source": "shell",
+      "target": "uk-gov",
+      "relationshipType": "regulatory",
+      "direction": "directed",
+      "strength": 5,
+      "status": "cooperative",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "stable" },
+        { "timestamp": "2025-10-01", "status": "stable" },
+        { "timestamp": "2026-01-01", "status": "cooperative" },
+        { "timestamp": "2026-04-01", "status": "cooperative" },
+        { "timestamp": "2026-07-01", "status": "cooperative" }
+      ],
+      "note": "Shell's UK headquarters align it closely with government energy policy. Recent North Sea tax adjustments have been a point of negotiation but the relationship remains strong."
+    },
+    {
+      "source": "shell",
+      "target": "nl-gov",
+      "relationshipType": "regulatory",
+      "direction": "directed",
+      "strength": 4,
+      "status": "strained",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "cooperative" },
+        { "timestamp": "2025-10-01", "status": "stable" },
+        { "timestamp": "2026-01-01", "status": "stable" },
+        { "timestamp": "2026-04-01", "status": "strained" },
+        { "timestamp": "2026-07-01", "status": "strained" }
+      ],
+      "note": "The Groningen gas field closure and Shell's HQ relocation to London have strained the historically close Dutch relationship. Court-ordered emissions cuts add regulatory friction."
+    },
+    {
+      "source": "shell",
+      "target": "nigeria-gov",
+      "relationshipType": "political",
+      "direction": "directed",
+      "strength": 4,
+      "status": "strained",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "strained" },
+        { "timestamp": "2025-10-01", "status": "strained" },
+        { "timestamp": "2026-01-01", "status": "stable" },
+        { "timestamp": "2026-04-01", "status": "strained" },
+        { "timestamp": "2026-07-01", "status": "strained" }
+      ],
+      "note": "Shell's planned divestment from Nigerian onshore assets has complicated the relationship. Environmental remediation disputes and community tensions persist in the Niger Delta."
+    },
+    {
+      "source": "shell",
+      "target": "us-gov",
+      "relationshipType": "regulatory",
+      "direction": "directed",
+      "strength": 4,
+      "status": "cooperative",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "stable" },
+        { "timestamp": "2025-10-01", "status": "stable" },
+        { "timestamp": "2026-01-01", "status": "cooperative" },
+        { "timestamp": "2026-04-01", "status": "cooperative" },
+        { "timestamp": "2026-07-01", "status": "cooperative" }
+      ],
+      "note": "Shell benefits from US LNG export policies and Gulf of Mexico production. The current administration's energy policy is broadly favourable to Shell's American operations."
+    },
+    {
+      "source": "shell",
+      "target": "eu-commission",
+      "relationshipType": "regulatory",
+      "direction": "directed",
+      "strength": 5,
+      "status": "stable",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "strained" },
+        { "timestamp": "2025-10-01", "status": "stable" },
+        { "timestamp": "2026-01-01", "status": "stable" },
+        { "timestamp": "2026-04-01", "status": "stable" },
+        { "timestamp": "2026-07-01", "status": "stable" }
+      ],
+      "note": "Shell navigates EU climate regulations including the ETS and CBAM. While compliance costs are significant, Shell has adapted its European operations to align with regulatory expectations."
+    },
+    {
+      "source": "shell",
+      "target": "ofgem",
+      "relationshipType": "regulatory",
+      "direction": "directed",
+      "strength": 3,
+      "status": "stable",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "stable" },
+        { "timestamp": "2025-10-01", "status": "stable" },
+        { "timestamp": "2026-01-01", "status": "stable" },
+        { "timestamp": "2026-04-01", "status": "stable" },
+        { "timestamp": "2026-07-01", "status": "stable" }
+      ],
+      "note": "Standard regulatory relationship governing Shell's UK retail energy supply operations. Price cap adjustments are closely monitored."
+    },
+    {
+      "source": "shell",
+      "target": "epa",
+      "relationshipType": "regulatory",
+      "direction": "directed",
+      "strength": 3,
+      "status": "stable",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "strained" },
+        { "timestamp": "2025-10-01", "status": "strained" },
+        { "timestamp": "2026-01-01", "status": "stable" },
+        { "timestamp": "2026-04-01", "status": "stable" },
+        { "timestamp": "2026-07-01", "status": "stable" }
+      ],
+      "note": "Shell's US operations comply with EPA regulations on emissions and environmental standards. Regulatory pressure has eased under current policy direction."
+    },
+    {
+      "source": "shell",
+      "target": "sec",
+      "relationshipType": "regulatory",
+      "direction": "directed",
+      "strength": 2,
+      "status": "stable",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "stable" },
+        { "timestamp": "2025-10-01", "status": "stable" },
+        { "timestamp": "2026-01-01", "status": "stable" },
+        { "timestamp": "2026-04-01", "status": "stable" },
+        { "timestamp": "2026-07-01", "status": "stable" }
+      ],
+      "note": "Shell's NYSE listing requires SEC compliance on financial disclosures. Climate disclosure rules are a developing area of regulatory interaction."
+    },
+    {
+      "source": "shell",
+      "target": "bp",
+      "relationshipType": "competitive",
+      "direction": "undirected",
+      "strength": 4,
+      "status": "stable",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "stable" },
+        { "timestamp": "2025-10-01", "status": "stable" },
+        { "timestamp": "2026-01-01", "status": "stable" },
+        { "timestamp": "2026-04-01", "status": "stable" },
+        { "timestamp": "2026-07-01", "status": "stable" }
+      ],
+      "note": "Shell and BP are direct competitors across all segments. BP's recent strategic pivot back toward fossil fuels mirrors some of Shell's own repositioning."
+    },
+    {
+      "source": "shell",
+      "target": "totalenergies",
+      "relationshipType": "competitive",
+      "direction": "undirected",
+      "strength": 3,
+      "status": "stable",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "stable" },
+        { "timestamp": "2025-10-01", "status": "stable" },
+        { "timestamp": "2026-01-01", "status": "stable" },
+        { "timestamp": "2026-04-01", "status": "stable" },
+        { "timestamp": "2026-07-01", "status": "stable" }
+      ],
+      "note": "TotalEnergies and Shell compete primarily in European retail, LNG trading, and renewable energy markets. Both companies are pursuing integrated energy strategies."
+    },
+    {
+      "source": "shell",
+      "target": "exxonmobil",
+      "relationshipType": "competitive",
+      "direction": "undirected",
+      "strength": 5,
+      "status": "stable",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "stable" },
+        { "timestamp": "2025-10-01", "status": "stable" },
+        { "timestamp": "2026-01-01", "status": "stable" },
+        { "timestamp": "2026-04-01", "status": "stable" },
+        { "timestamp": "2026-07-01", "status": "stable" }
+      ],
+      "note": "Shell and ExxonMobil are the two largest Western oil majors. Competition spans upstream, downstream, chemicals, and emerging low-carbon technologies."
+    },
+    {
+      "source": "shell",
+      "target": "saudi-aramco",
+      "relationshipType": "competitive",
+      "direction": "undirected",
+      "strength": 3,
+      "status": "stable",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "cooperative" },
+        { "timestamp": "2025-10-01", "status": "stable" },
+        { "timestamp": "2026-01-01", "status": "stable" },
+        { "timestamp": "2026-04-01", "status": "stable" },
+        { "timestamp": "2026-07-01", "status": "stable" }
+      ],
+      "note": "Complex relationship combining competition on crude production with collaboration on refining joint ventures. Aramco's MOTIVA partnership with Shell was dissolved in 2017."
+    },
+    {
+      "source": "shell",
+      "target": "nnpc",
+      "relationshipType": "ownership",
+      "direction": "directed",
+      "strength": 4,
+      "status": "strained",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "stable" },
+        { "timestamp": "2025-10-01", "status": "strained" },
+        { "timestamp": "2026-01-01", "status": "strained" },
+        { "timestamp": "2026-04-01", "status": "strained" },
+        { "timestamp": "2026-07-01", "status": "strained" }
+      ],
+      "note": "NNPC is Shell's joint venture partner in SPDC. Shell's planned divestment of onshore assets has created tension over valuation and environmental liabilities."
+    },
+    {
+      "source": "shell",
+      "target": "qatarenergy",
+      "relationshipType": "contractual",
+      "direction": "directed",
+      "strength": 5,
+      "status": "cooperative",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "cooperative" },
+        { "timestamp": "2025-10-01", "status": "cooperative" },
+        { "timestamp": "2026-01-01", "status": "cooperative" },
+        { "timestamp": "2026-04-01", "status": "cooperative" },
+        { "timestamp": "2026-07-01", "status": "cooperative" }
+      ],
+      "note": "Shell's strategic partnership with QatarEnergy on the North Field Expansion is central to Shell's LNG growth strategy. The relationship is one of Shell's strongest partnerships."
+    },
+    {
+      "source": "shell",
+      "target": "schlumberger",
+      "relationshipType": "contractual",
+      "direction": "directed",
+      "strength": 3,
+      "status": "cooperative",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "cooperative" },
+        { "timestamp": "2025-10-01", "status": "cooperative" },
+        { "timestamp": "2026-01-01", "status": "cooperative" },
+        { "timestamp": "2026-04-01", "status": "cooperative" },
+        { "timestamp": "2026-07-01", "status": "cooperative" }
+      ],
+      "note": "SLB provides essential oilfield services. Shell's digital transformation initiatives leverage SLB's subsurface data and automation capabilities."
+    },
+    {
+      "source": "shell",
+      "target": "blackrock",
+      "relationshipType": "financing",
+      "direction": "directed",
+      "strength": 5,
+      "status": "stable",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "cooperative" },
+        { "timestamp": "2025-10-01", "status": "cooperative" },
+        { "timestamp": "2026-01-01", "status": "stable" },
+        { "timestamp": "2026-04-01", "status": "stable" },
+        { "timestamp": "2026-07-01", "status": "stable" }
+      ],
+      "note": "BlackRock has moderated its ESG pressure on energy companies. While still engaged on climate, the relationship has stabilised as BlackRock takes a more pragmatic stance."
+    },
+    {
+      "source": "shell",
+      "target": "vanguard",
+      "relationshipType": "financing",
+      "direction": "directed",
+      "strength": 4,
+      "status": "stable",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "stable" },
+        { "timestamp": "2025-10-01", "status": "stable" },
+        { "timestamp": "2026-01-01", "status": "stable" },
+        { "timestamp": "2026-04-01", "status": "stable" },
+        { "timestamp": "2026-07-01", "status": "stable" }
+      ],
+      "note": "Vanguard's passive investment approach means it maintains its Shell holdings regardless of short-term strategy changes. Governance engagement occurs primarily through proxy voting."
+    },
+    {
+      "source": "shell",
+      "target": "hsbc",
+      "relationshipType": "financing",
+      "direction": "directed",
+      "strength": 3,
+      "status": "cooperative",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "stable" },
+        { "timestamp": "2025-10-01", "status": "stable" },
+        { "timestamp": "2026-01-01", "status": "cooperative" },
+        { "timestamp": "2026-04-01", "status": "cooperative" },
+        { "timestamp": "2026-07-01", "status": "cooperative" }
+      ],
+      "note": "HSBC provides banking and financing services. Its climate commitments have led to more structured engagement on Shell's transition financing needs."
+    },
+    {
+      "source": "shell",
+      "target": "norges-bank",
+      "relationshipType": "financing",
+      "direction": "directed",
+      "strength": 4,
+      "status": "strained",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "stable" },
+        { "timestamp": "2025-10-01", "status": "stable" },
+        { "timestamp": "2026-01-01", "status": "strained" },
+        { "timestamp": "2026-04-01", "status": "strained" },
+        { "timestamp": "2026-07-01", "status": "strained" }
+      ],
+      "note": "Norges Bank has publicly criticised Shell's weakened climate targets and voted against the board on climate resolutions. A significant source of investor pressure."
+    },
+    {
+      "source": "shell",
+      "target": "greenpeace",
+      "relationshipType": "advocacy",
+      "direction": "undirected",
+      "strength": 3,
+      "status": "hostile",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "hostile" },
+        { "timestamp": "2025-10-01", "status": "hostile" },
+        { "timestamp": "2026-01-01", "status": "hostile" },
+        { "timestamp": "2026-04-01", "status": "hostile" },
+        { "timestamp": "2026-07-01", "status": "hostile" }
+      ],
+      "note": "Greenpeace maintains persistent opposition to Shell's fossil fuel operations. Direct action campaigns target Shell infrastructure, branding, and public events."
+    },
+    {
+      "source": "shell",
+      "target": "friends-earth",
+      "relationshipType": "advocacy",
+      "direction": "undirected",
+      "strength": 4,
+      "status": "hostile",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "hostile" },
+        { "timestamp": "2025-10-01", "status": "hostile" },
+        { "timestamp": "2026-01-01", "status": "hostile" },
+        { "timestamp": "2026-04-01", "status": "hostile" },
+        { "timestamp": "2026-07-01", "status": "hostile" }
+      ],
+      "note": "Friends of the Earth won a landmark court case against Shell in 2021. Legal engagement continues as Shell appeals the ruling while FoE pursues further legal action."
+    },
+    {
+      "source": "shell",
+      "target": "clientearth",
+      "relationshipType": "advocacy",
+      "direction": "undirected",
+      "strength": 3,
+      "status": "hostile",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "strained" },
+        { "timestamp": "2025-10-01", "status": "hostile" },
+        { "timestamp": "2026-01-01", "status": "hostile" },
+        { "timestamp": "2026-04-01", "status": "hostile" },
+        { "timestamp": "2026-07-01", "status": "hostile" }
+      ],
+      "note": "ClientEarth filed a derivative claim against Shell's directors for mismanaging climate risk. Although dismissed, it set a precedent for future climate litigation against boards."
+    },
+    {
+      "source": "shell",
+      "target": "unilever",
+      "relationshipType": "contractual",
+      "direction": "directed",
+      "strength": 3,
+      "status": "cooperative",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "cooperative" },
+        { "timestamp": "2025-10-01", "status": "cooperative" },
+        { "timestamp": "2026-01-01", "status": "cooperative" },
+        { "timestamp": "2026-04-01", "status": "cooperative" },
+        { "timestamp": "2026-07-01", "status": "cooperative" }
+      ],
+      "note": "Unilever purchases petrochemical products from Shell. Both companies collaborate on sustainable packaging and circular economy initiatives."
+    },
+    {
+      "source": "shell",
+      "target": "lufthansa",
+      "relationshipType": "contractual",
+      "direction": "directed",
+      "strength": 3,
+      "status": "cooperative",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "stable" },
+        { "timestamp": "2025-10-01", "status": "stable" },
+        { "timestamp": "2026-01-01", "status": "cooperative" },
+        { "timestamp": "2026-04-01", "status": "cooperative" },
+        { "timestamp": "2026-07-01", "status": "cooperative" }
+      ],
+      "note": "Shell supplies jet fuel to Lufthansa and is developing sustainable aviation fuel (SAF) supply agreements to support aviation decarbonisation targets."
+    },
+    {
+      "source": "shell",
+      "target": "basf",
+      "relationshipType": "contractual",
+      "direction": "directed",
+      "strength": 3,
+      "status": "stable",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "cooperative" },
+        { "timestamp": "2025-10-01", "status": "cooperative" },
+        { "timestamp": "2026-01-01", "status": "stable" },
+        { "timestamp": "2026-04-01", "status": "stable" },
+        { "timestamp": "2026-07-01", "status": "stable" }
+      ],
+      "note": "BASF is a major customer for Shell's chemical feedstocks. European energy price volatility has affected the commercial dynamics of this relationship."
+    },
+    {
+      "source": "shell",
+      "target": "unite-union",
+      "relationshipType": "contractual",
+      "direction": "undirected",
+      "strength": 2,
+      "status": "strained",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "stable" },
+        { "timestamp": "2025-10-01", "status": "strained" },
+        { "timestamp": "2026-01-01", "status": "strained" },
+        { "timestamp": "2026-04-01", "status": "strained" },
+        { "timestamp": "2026-07-01", "status": "strained" }
+      ],
+      "note": "Union tensions have increased over refinery rationalisation and perceived lack of just transition planning for affected workers."
+    },
+    {
+      "source": "shell",
+      "target": "industriall",
+      "relationshipType": "contractual",
+      "direction": "undirected",
+      "strength": 2,
+      "status": "stable",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "stable" },
+        { "timestamp": "2025-10-01", "status": "stable" },
+        { "timestamp": "2026-01-01", "status": "stable" },
+        { "timestamp": "2026-04-01", "status": "stable" },
+        { "timestamp": "2026-07-01", "status": "stable" }
+      ],
+      "note": "IndustriALL engages Shell through global framework agreements on labour standards and just transition. The relationship is formal but functional."
+    },
+    {
+      "source": "shell",
+      "target": "wim-elfrink",
+      "relationshipType": "ownership",
+      "direction": "directed",
+      "strength": 5,
+      "status": "cooperative",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "cooperative" },
+        { "timestamp": "2025-10-01", "status": "cooperative" },
+        { "timestamp": "2026-01-01", "status": "cooperative" },
+        { "timestamp": "2026-04-01", "status": "cooperative" },
+        { "timestamp": "2026-07-01", "status": "cooperative" }
+      ],
+      "note": "Wael Sawan as CEO drives Shell's strategic direction. His focus on shareholder returns and LNG has been well received by investors but criticised by climate advocates."
+    },
+    {
+      "source": "shell",
+      "target": "mark-carney",
+      "relationshipType": "political",
+      "direction": "undirected",
+      "strength": 2,
+      "status": "strained",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "stable" },
+        { "timestamp": "2025-10-01", "status": "stable" },
+        { "timestamp": "2026-01-01", "status": "strained" },
+        { "timestamp": "2026-04-01", "status": "strained" },
+        { "timestamp": "2026-07-01", "status": "strained" }
+      ],
+      "note": "Carney's climate finance advocacy creates indirect pressure on Shell through policy frameworks and financial regulation that affects capital allocation to fossil fuels."
+    },
+    {
+      "source": "shell",
+      "target": "iea",
+      "relationshipType": "regulatory",
+      "direction": "directed",
+      "strength": 3,
+      "status": "stable",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "cooperative" },
+        { "timestamp": "2025-10-01", "status": "stable" },
+        { "timestamp": "2026-01-01", "status": "stable" },
+        { "timestamp": "2026-04-01", "status": "stable" },
+        { "timestamp": "2026-07-01", "status": "stable" }
+      ],
+      "note": "The IEA's energy transition scenarios are used by analysts and investors to evaluate Shell's climate strategy. Shell contributes data and analysis to IEA reports."
+    },
+    {
+      "source": "shell",
+      "target": "opec",
+      "relationshipType": "political",
+      "direction": "undirected",
+      "strength": 3,
+      "status": "stable",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "stable" },
+        { "timestamp": "2025-10-01", "status": "cooperative" },
+        { "timestamp": "2026-01-01", "status": "stable" },
+        { "timestamp": "2026-04-01", "status": "stable" },
+        { "timestamp": "2026-07-01", "status": "stable" }
+      ],
+      "note": "Shell is not an OPEC member but OPEC's production decisions are among the most significant external factors affecting Shell's upstream economics."
+    },
+    {
+      "source": "shell",
+      "target": "siemens-energy",
+      "relationshipType": "contractual",
+      "direction": "directed",
+      "strength": 2,
+      "status": "cooperative",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "cooperative" },
+        { "timestamp": "2025-10-01", "status": "cooperative" },
+        { "timestamp": "2026-01-01", "status": "cooperative" },
+        { "timestamp": "2026-04-01", "status": "cooperative" },
+        { "timestamp": "2026-07-01", "status": "cooperative" }
+      ],
+      "note": "Siemens Energy supplies critical equipment for Shell's LNG and power generation facilities. The companies collaborate on hydrogen electrolyser technology."
+    },
+    {
+      "source": "shell",
+      "target": "climate-action-100",
+      "relationshipType": "advocacy",
+      "direction": "undirected",
+      "strength": 4,
+      "status": "strained",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "stable" },
+        { "timestamp": "2025-10-01", "status": "stable" },
+        { "timestamp": "2026-01-01", "status": "strained" },
+        { "timestamp": "2026-04-01", "status": "strained" },
+        { "timestamp": "2026-07-01", "status": "strained" }
+      ],
+      "note": "Climate Action 100+ has escalated engagement with Shell after the company weakened its 2030 emissions reduction targets. Coordinated investor pressure continues."
+    },
+    {
+      "source": "shell",
+      "target": "amazon",
+      "relationshipType": "contractual",
+      "direction": "directed",
+      "strength": 3,
+      "status": "cooperative",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "stable" },
+        { "timestamp": "2025-10-01", "status": "stable" },
+        { "timestamp": "2026-01-01", "status": "cooperative" },
+        { "timestamp": "2026-04-01", "status": "cooperative" },
+        { "timestamp": "2026-07-01", "status": "cooperative" }
+      ],
+      "note": "Amazon procures renewable energy and low-carbon fuels from Shell to meet its Climate Pledge. A growing commercial relationship driven by corporate decarbonisation demand."
+    },
+    {
+      "source": "blackrock",
+      "target": "climate-action-100",
+      "relationshipType": "advocacy",
+      "direction": "undirected",
+      "strength": 3,
+      "status": "strained",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "cooperative" },
+        { "timestamp": "2025-10-01", "status": "stable" },
+        { "timestamp": "2026-01-01", "status": "strained" },
+        { "timestamp": "2026-04-01", "status": "strained" },
+        { "timestamp": "2026-07-01", "status": "strained" }
+      ],
+      "note": "BlackRock withdrew from Climate Action 100+ in 2024, citing independence concerns. This has complicated coordinated investor engagement on climate."
+    },
+    {
+      "source": "friends-earth",
+      "target": "nl-gov",
+      "relationshipType": "political",
+      "direction": "directed",
+      "strength": 3,
+      "status": "cooperative",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "cooperative" },
+        { "timestamp": "2025-10-01", "status": "cooperative" },
+        { "timestamp": "2026-01-01", "status": "cooperative" },
+        { "timestamp": "2026-04-01", "status": "cooperative" },
+        { "timestamp": "2026-07-01", "status": "cooperative" }
+      ],
+      "note": "Friends of the Earth Netherlands successfully used Dutch courts to mandate emissions cuts for Shell. The Dutch government's environmental policy broadly aligns with FoE's advocacy."
+    },
+    {
+      "source": "norges-bank",
+      "target": "climate-action-100",
+      "relationshipType": "advocacy",
+      "direction": "undirected",
+      "strength": 3,
+      "status": "cooperative",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "cooperative" },
+        { "timestamp": "2025-10-01", "status": "cooperative" },
+        { "timestamp": "2026-01-01", "status": "cooperative" },
+        { "timestamp": "2026-04-01", "status": "cooperative" },
+        { "timestamp": "2026-07-01", "status": "cooperative" }
+      ],
+      "note": "Norges Bank is an active member of Climate Action 100+ and co-leads engagement with Shell on climate targets and governance."
+    },
+    {
+      "source": "nnpc",
+      "target": "nigeria-gov",
+      "relationshipType": "ownership",
+      "direction": "directed",
+      "strength": 5,
+      "status": "cooperative",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "cooperative" },
+        { "timestamp": "2025-10-01", "status": "cooperative" },
+        { "timestamp": "2026-01-01", "status": "cooperative" },
+        { "timestamp": "2026-04-01", "status": "cooperative" },
+        { "timestamp": "2026-07-01", "status": "cooperative" }
+      ],
+      "note": "NNPC is state-owned and operates as the Nigerian government's primary instrument in the oil and gas sector."
+    },
+    {
+      "source": "bp",
+      "target": "exxonmobil",
+      "relationshipType": "competitive",
+      "direction": "undirected",
+      "strength": 3,
+      "status": "stable",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "stable" },
+        { "timestamp": "2025-10-01", "status": "stable" },
+        { "timestamp": "2026-01-01", "status": "stable" },
+        { "timestamp": "2026-04-01", "status": "stable" },
+        { "timestamp": "2026-07-01", "status": "stable" }
+      ],
+      "note": "BP and ExxonMobil compete across global markets. ExxonMobil's acquisition of Pioneer Natural Resources has shifted competitive dynamics in US upstream."
+    },
+    {
+      "source": "eu-commission",
+      "target": "iea",
+      "relationshipType": "political",
+      "direction": "undirected",
+      "strength": 3,
+      "status": "cooperative",
+      "relationshipHistory": [
+        { "timestamp": "2025-07-01", "status": "cooperative" },
+        { "timestamp": "2025-10-01", "status": "cooperative" },
+        { "timestamp": "2026-01-01", "status": "cooperative" },
+        { "timestamp": "2026-04-01", "status": "cooperative" },
+        { "timestamp": "2026-07-01", "status": "cooperative" }
+      ],
+      "note": "The EU Commission relies on IEA analysis to inform energy and climate policy. Both institutions advocate for accelerated clean energy transition."
+    }
+  ]
+}
