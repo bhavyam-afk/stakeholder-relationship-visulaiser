@@ -10,8 +10,7 @@ import {
   TREND_DISPLAY,
   TYPE_LABELS,
   RELATIONSHIP_TYPE_LABELS,
-  computeTrend,
-  getNodeRadius,
+  computeTrend
 } from "@/lib/utils";
 
 interface SidebarProps {
@@ -29,25 +28,7 @@ export default function Sidebar({
 }: SidebarProps) {
   if (!selectedNode) {
     return (
-      <div className="sidebar sidebar-empty">
-        <div className="sidebar-empty-content">
-          <div className="sidebar-empty-icon">
-            <svg
-              width="48"
-              height="48"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-            >
-              <circle cx="12" cy="12" r="10" />
-              <path d="M12 16v-4M12 8h.01" />
-            </svg>
-          </div>
-          <h3>Select a Stakeholder</h3>
-          <p>Click on any node in the graph to view detailed relationship intelligence.</p>
-        </div>
-      </div>
+      <></>
     );
   }
 

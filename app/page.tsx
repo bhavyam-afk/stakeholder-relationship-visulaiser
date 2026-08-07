@@ -68,8 +68,8 @@ export default function Home() {
       {/* Header */}
       <header className="app-header">
         <div className="header-left">
-          <button 
-            className="hamburger-btn" 
+          <button
+            className="hamburger-btn"
             onClick={() => setIsLeftPanelOpen(!isLeftPanelOpen)}
             aria-label="Toggle Filters"
           >

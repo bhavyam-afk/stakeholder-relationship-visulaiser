@@ -72,13 +72,3 @@ export interface SimulationNode extends StakeholderNode {
   vy?: number;
 }
 
-export interface SimulationEdge {
-  source: SimulationNode | string;
-  target: SimulationNode | string;
-  relationshipType: RelationshipType;
-  direction: RelationshipDirection;
-  strength: 1 | 2 | 3 | 4 | 5;
-  status: RelationshipStatus;
-  relationshipHistory: HistoricalSnapshot[];
-  note: string;
-}
